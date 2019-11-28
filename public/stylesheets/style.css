@@ -1,8 +1,40 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #B89663;
+  color: #280000;
 }
 
 a {
-  color: #00B7FF;
+  color: #AD22CD;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CEB82E;
+}
+
+.login-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image {
+  height: 55vh;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin: 0;
 }

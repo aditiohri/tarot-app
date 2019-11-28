@@ -25,23 +25,12 @@ router.get('/logout', function(req, res) {
 });
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
-router.get('/', function(req, res) {
-  console.log('hi');
-  request(rootURL, function (err, response, body) {
-    // const cards = JSON.parse(body);
-    // console.log('cards: ', cards);
-    console.log('body: ', body);
-    console.log('err: ', err);
-    res.render('index', {
-      title: 'Tarot Reading',
-      cards: body,
-      user: req.user
-    })
+router.get('/', function(req, res, next) {
+  res.render('index', { 
+    title: 'Tarot Reading',
+    user: req.user
   });
 });
+
 
 module.exports = router;

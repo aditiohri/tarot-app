@@ -15,3 +15,16 @@ function index(req, res, next) {
         });
     // })
 }
+
+// router.get('/', function(req, res) {
+//   console.log('hi');
+//   request(rootURL, function (err, response, body) {
+//     console.log('body: ', body);
+//     console.log('err: ', err);
+//     res.render('index', {
+//       title: 'Tarot Reading',
+//       cards: body,
+//       user: req.user
+//     })
+//   });
+// });

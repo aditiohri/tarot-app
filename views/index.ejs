@@ -5,19 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <div>
-        <ul class="right">
-            <li>
-            <% if (user) { %>
-              <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-            <% } else { %>
-              <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-            <% } %>
-            </li>
-          </ul>
-      <p><%= cards %></p>
+    <div class="login-container">
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <div>
+        <img src="https://i.imgur.com/AdoK0Wp.png" alt="hand over cup" class="landing-image">
+          <ul class="landing-login">
+              <li>
+              <% if (user) { %>
+                <a href="/logout">Log Out</a>
+              <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+              <% } %>
+              </li>
+            </ul>
+      </div>
     </div>
   </body>
 </html>
