@@ -1,6 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+
+/* GET home page. */
+router.get('/',  function (req, res) {
+  res.render('users/index', {
+    user: req.user,
+    title: 'Tarot Reading'
+  });
+})
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate('google', {
@@ -11,8 +19,8 @@ router.get('/auth/google', passport.authenticate('google', {
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/users',
-    failureRedirect: '/'
+    successRedirect: '/',
+    failureRedirect: '/error'
   }
 ));
 
@@ -22,21 +30,6 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { 
-    title: 'Tarot Reading',
-    user: req.user
-  });
-});
-
-router.get('/users', function (req, res) {
-  console.log('req.user: ', req.user);
-  console.log('req.user.name: ', req.user.name);
-  res.render('users/index', {
-    user: req.user,
-  });
-})
 
 
 module.exports = router;
