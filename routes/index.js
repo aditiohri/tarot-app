@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var request = require('request');
-const rootURL = 'https://rws-cards-api.herokuapp.com/api/v1/cards/random';
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate('google', {
@@ -14,14 +12,14 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect: '/users',
-    failureRedirect: '/users'
+    failureRedirect: '/'
   }
 ));
 
 // OAuth logout route
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/users');
+  res.redirect('/');
 });
 
 /* GET home page. */
@@ -31,6 +29,14 @@ router.get('/', function(req, res, next) {
     user: req.user
   });
 });
+
+router.get('/users', function (req, res) {
+  console.log('req.user: ', req.user);
+  console.log('req.user.name: ', req.user.name);
+  res.render('users/index', {
+    user: req.user,
+  });
+})
 
 
 module.exports = router;
