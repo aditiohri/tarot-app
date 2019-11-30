@@ -10,11 +10,14 @@ module.exports = {
 function newCard (req, res) {
     console.log('reading starts')
     request(rootURL, function (err, response, body) {
-        let card = JSON.parse(body)
+        let reading = JSON.parse(body)
+        console.log('reading: ', reading);
+        let card = reading.cards;
         console.log('card: ', card);
+        console.log('card meaning: ', card[0].meaning_up);
     res.render('readings/new',  {
         title: 'Tarot Reading',
-        card: card.name,
+        card: card[0].meaning_up,
         user: req.user
     });
 })
