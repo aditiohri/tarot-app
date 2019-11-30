@@ -10,8 +10,12 @@
     <% } else { %>
         <div class="readings-nav">
             <%= question %>
-            <%= card %>
+            <%= cardName %>
+            <%= cardMeaning %>
         </div>    
+        <form action="">
+            <button>Save Reading</button>
+        </form>
     <% } %>
     
 <%- include('../partials/footer') %>

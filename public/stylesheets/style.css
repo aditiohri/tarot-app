@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Homemade Apple', cursive;
 }
 
 body {
@@ -18,8 +19,9 @@ a:hover {
 }
 
 .login-container {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-end;
   padding: 10vh;
@@ -52,7 +54,7 @@ li {
   height: 70vh;
   width: 70vw;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   margin: auto;
   justify-content: center;
   align-items: center;

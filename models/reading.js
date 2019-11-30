@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const readingSchema = new Schema({
 question: String,
+name: String,
 description: String,
 meaning: String,
 diary: [{type: Schema.Types.ObjectId, ref: 'Comment'}]

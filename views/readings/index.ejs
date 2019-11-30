@@ -1,4 +1,24 @@
 <%- include('../partials/header') %>
-
-
+<table>
+    <% if (reading) { %>
+        <% reading.forEach(function(r) { %>
+            <thead>
+            <th>Date Created</th>
+            <th>Question</th>
+            <th>Card Description</th>
+            <th>Card Meaning</th>
+            </thead>
+            <tbody>
+                <tr>
+                <td><%= r.createdAt %></td>
+                <td><%= r.question %></td>
+                <td><%= r.description %></td>
+                <td><%= r.meaning %></td>
+                </tr>
+            </tbody>
+            <% }) %>
+        <% } else { %>
+            <p>You don't have any saved readings yet!</p>
+        <% } %>
+        </table>
 <%- include('../partials/footer') %>

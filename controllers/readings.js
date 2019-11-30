@@ -25,12 +25,13 @@ function pullCard (req, res) {
         request(rootURL, function (err, response, body) {
             let pull = JSON.parse(body)
             console.log('pull: ', pull);
-            let card = pull.cards;
+            let card = pull.cards[0];
             console.log('card: ', card);
-            console.log('card meaning: ', card[0].meaning_up);
+            console.log('card meaning: ', card.meaning_up);
             res.render('readings/new',  {
                 user: req.user,
-                card: card[0].meaning_up,
+                cardName: card.name,
+                cardMeaning: card.meaning_up,
                 question: reading.question
             });
         })
