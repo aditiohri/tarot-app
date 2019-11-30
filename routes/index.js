@@ -4,9 +4,8 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/',  function (req, res) {
-  res.render('users/index', {
-    user: req.user,
-    title: 'Tarot Reading'
+  res.render('index', {
+    user: req.user
   });
 })
 

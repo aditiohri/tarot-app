@@ -25,6 +25,11 @@ a:hover {
   padding: 10vh;
 }
 
+.readings-nav {
+  display: flex;
+  align-self: flex-start;
+}
+
 .landing-image {
   height: 55vh;
 }
@@ -51,9 +56,4 @@ li {
   margin: auto;
   justify-content: center;
   align-items: center;
-}
-
-.lost-image {
-  display: flex;
-  height: 10rem;
 }
