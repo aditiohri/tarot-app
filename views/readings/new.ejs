@@ -1,5 +1,17 @@
 <%- include('../partials/header') %>
-    <div class="readings-nav">
-        <%= card %>
-    </div>    
+    <% if (!card) { %>
+        <form action="/readings" method="POST">
+            <label>
+               <p>What would you like to ask?</p>
+            </label>  
+            <input type="text" name="question">
+            <input type="submit" value="Pull a card">
+        </form>
+    <% } else { %>
+        <div class="readings-nav">
+            <%= question %>
+            <%= card %>
+        </div>    
+    <% } %>
+    
 <%- include('../partials/footer') %>

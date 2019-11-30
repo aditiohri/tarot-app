@@ -3,23 +3,37 @@ const request = require('request');
 const rootURL = 'https://rws-cards-api.herokuapp.com/api/v1/cards/random';
 
 module.exports = {
-    new: newCard
+    new: newCard,
+    pull: pullCard
 
 };
 
 function newCard (req, res) {
-    console.log('reading starts')
-    request(rootURL, function (err, response, body) {
-        let reading = JSON.parse(body)
-        console.log('reading: ', reading);
-        let card = reading.cards;
-        console.log('card: ', card);
-        console.log('card meaning: ', card[0].meaning_up);
-    res.render('readings/new',  {
-        title: 'Tarot Reading',
-        card: card[0].meaning_up,
-        user: req.user
+    res.render('readings/new', {
+        user: req.user,
+        card: null,
+        question: null
     });
+};
+
+function pullCard (req, res) {
+    console.log('reading starts');
+    let reading = new Reading(req.body);
+    console.log('reading: ', reading);
+    reading.save(function(err){
+        if (err) return res.render('/error');
+        request(rootURL, function (err, response, body) {
+            let pull = JSON.parse(body)
+            console.log('pull: ', pull);
+            let card = pull.cards;
+            console.log('card: ', card);
+            console.log('card meaning: ', card[0].meaning_up);
+            res.render('readings/new',  {
+                user: req.user,
+                card: card[0].meaning_up,
+                question: reading.question
+            });
+        })
 })
 }
 
