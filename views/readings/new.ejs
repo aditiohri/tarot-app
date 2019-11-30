@@ -13,7 +13,7 @@
             <%= cardName %>
             <%= cardMeaning %>
         </div>    
-        <form action="">
+        <form action="/readings/<% reading._id %>?_method=PUT" method="POST">
             <button>Save Reading</button>
         </form>
     <% } %>

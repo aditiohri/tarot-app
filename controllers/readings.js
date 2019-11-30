@@ -4,8 +4,12 @@ const rootURL = 'https://rws-cards-api.herokuapp.com/api/v1/cards/random';
 
 module.exports = {
     new: newCard,
-    pull: pullCard
+    pull: pullCard,
+    update
+};
 
+function update(){
+// push cardName and cardMeaning to reading
 };
 
 function newCard (req, res) {
