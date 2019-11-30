@@ -9,12 +9,12 @@
         </form>
     <% } else { %>
         <div class="readings-nav">
-            <%= question %>
-            <%= card %>
-            <%= cardMeaning %>
-            <%= cardDescription %>
+          <p>           <%= reading.question %>          </p>
+          <p>             <%= reading.name %> </p>
+          <p>             <%= reading.meaning %>          </p>
+          <p>            <%= reading.description %>          </p>  
         </div>    
-        <form method="POST" action="/readings/<%= readingId %>?_method=PUT">
+        <form method="GET" action="/readings/<%= reading._id %>">
             <button>Save Reading</button>
         </form>
     <% } %>

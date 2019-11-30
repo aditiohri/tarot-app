@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 <table>
-    <thead>
-    <th>Date Created</th>
-    <th>Question</th>
-    <th>Card Description</th>
-    <th>Card Meaning</th>
-    </thead>
-    <tbody>
-        <tr>
-        <td><%= r.createdAt %></td>
-        <td><%= r.question %></td>
-        <td><%= r.description %></td>
-        <td><%= r.meaning %></td>
-        </tr>
-    </tbody>
-</table>
+        <thead>
+        <th>Date Created</th>
+        <th>Question</th>
+        <th>Card Description</th>
+        <th>Card Meaning</th>
+        </thead>
+        <tbody>
+            <tr>
+            <td><%= reading.createdAt %></td>
+            <td><%= reading.question %></td>
+            <td><%= reading.description %></td>
+            <td><%= reading.meaning %></td>
+            </tr>
+        </tbody>
+    </table>
 <%- include('../partials/footer') %>
