@@ -2,15 +2,25 @@
 
 <div class="readings-nav">
     <form method="POST" action="/readings">
-          <label for="question">
-              <input name="question" type="text" value="<%= question %>">  </input>
+        <label for="question">
+               <p><%= question %></p> 
+            <input name="question" type="hidden" value="<%= question %>">  </input>
+            </label>
+          <label for="name">
+              <p><%= cardName %></p>
+              <input name="name" type="hidden" value="<%= cardName %>"> </input>
           </label>
-          <input name="name"     type="text" value="<%= cardName %>"> </input>
-          <input name="meaning" type="text" value="<%= cardMean %>">        </input>
-          <input name="desc" type="text" value="<%= cardDesc %>">          </input>  
-        </div>    
-            <button type="submit">Add to Diary</button>
-    </form>
+          <label for="meaning">
+              <p><%= cardMean %></p>
+              <input name="meaning" type="hidden" value="<%= cardMean %>">        </input>
+          </label>
+          <label for="desc">
+              <p><%= cardDesc %></p>
+              <input name="desc" type="hidden" value="<%= cardDesc %>">          </input>  
+          </label>
+          <button type="submit">Add to Diary</button>
+        </form>
+    </div>    
         
-    
+
 <%- include('../partials/footer') %>

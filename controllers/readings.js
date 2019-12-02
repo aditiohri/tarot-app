@@ -77,9 +77,9 @@ function addCard (req, res) {
     let reading = new Reading(req.body);
     console.log('question: ', req.body.question);
     reading.question = req.body.question;
-    reading.name = req.body.cardName;
-    reading.description = req.body.cardDesc;
-    reading.meaning = req.body.cardMean;
+    reading.name = req.body.name;
+    reading.description = req.body.desc;
+    reading.meaning = req.body.meaning;
     console.log('reading at end: ', reading);
     reading.save(function(err){
         console.log('saved reading: ', reading)
