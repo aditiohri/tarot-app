@@ -12,6 +12,10 @@ router.get('/', isLoggedIn, readingsCtrl.index);
 router.post('/question', readingsCtrl.pull);
 //save reading in collection
 router.post('/', readingsCtrl.add);
+//edit reading interpretations
+router.post('/:id/edit', readingsCtrl.edit);
+//show edited reading
+router.put('/:id', readingsCtrl.show);
 //delete individual reading
 router.delete('/:id', readingsCtrl.deleteOne);
 //delete all readings

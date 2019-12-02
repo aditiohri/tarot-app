@@ -3,27 +3,17 @@ const request = require('request');
 const rootURL = 'https://rws-cards-api.herokuapp.com/api/v1/cards/random';
 
 module.exports = {
+    index,
+    show,
     new: newCard,
     pull: pullCard,
     add: addCard,
-    show,
-    index,
-    deleteOne,
+    edit,
     deleteAll,
-    // update
+    deleteOne,
 };
 
-function deleteAll(req, res) {
-Reading.deleteMany({}, function(err, reading){
-    res.redirect('/readings');
-})
-}
 
-function deleteOne(req, res) {
-Reading.findByIdAndDelete(req.params.id, function(err, reading){
-    res.redirect('/readings');
-})
-}
 
 function index(req, res){
 Reading.find({}, function(err, readings){
@@ -42,10 +32,6 @@ Reading.findById(req.params.id, (function(err, reading){
             reading
         })}))
 }
-
-// function update(req, res){
-
-// };
 
 function newCard (req, res) {
     res.render('readings/new', {
@@ -86,4 +72,31 @@ function addCard (req, res) {
         if (err) return res.render('/error');
         res.redirect('/readings');
     })
+}
+
+function edit(req, res) {
+    let reading = new Reading(req.body);
+    console.log('question: ', req.body.question);
+    reading.question = req.body.question;
+    reading.name = req.body.name;
+    reading.description = req.body.desc;
+    reading.meaning = req.body.meaning;
+    console.log('reading at end: ', reading);
+    reading.save(function(err){
+        console.log('saved reading: ', reading)
+        if (err) return res.render('/error');
+        res.redirect('/readings/edit');
+    })
+}
+
+function deleteAll(req, res) {
+Reading.deleteMany({}, function(err, reading){
+    res.redirect('/readings');
+})
+}
+
+function deleteOne(req, res) {
+Reading.findByIdAndDelete(req.params.id, function(err, reading){
+    res.redirect('/readings');
+})
 }
