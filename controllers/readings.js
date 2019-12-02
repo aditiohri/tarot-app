@@ -6,7 +6,31 @@ module.exports = {
     new: newCard,
     pull: pullCard,
     show,
+    index,
+    deleteOne,
+    deleteAll,
     // update
+};
+
+function deleteAll(req, res) {
+Reading.deleteMany({}, function(err, reading){
+    res.redirect('/readings');
+})
+}
+
+function deleteOne(req, res) {
+Reading.findByIdAndDelete(req.params.id, function(err, reading){
+    res.redirect('/readings');
+})
+}
+
+function index(req, res){
+Reading.find({}, function(err, readings){
+    res.render(`readings/index`, {
+        user: req.user,
+        readings
+    });
+});
 };
 
 function show(req, res) {
@@ -52,14 +76,3 @@ function pullCard (req, res) {
         })
 })
 }
-
-// function create(req, res) {
-
-// }
-// function newReading(req, res) {
-//     res.render('users/index',  {
-//         title: 'Tarot Reading',
-//         cards: JSON.parse(body)
-//     });
-// })
-// }

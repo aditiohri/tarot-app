@@ -1,24 +1,28 @@
 <%- include('../partials/header') %>
 <table>
-    <% if (reading) { %>
-        <% reading.forEach(function(r) { %>
-            <thead>
-            <th>Date Created</th>
-            <th>Question</th>
-            <th>Card Description</th>
-            <th>Card Meaning</th>
-            </thead>
-            <tbody>
-                <tr>
-                <td><%= r.createdAt %></td>
-                <td><%= r.question %></td>
-                <td><%= r.description %></td>
-                <td><%= r.meaning %></td>
-                </tr>
-            </tbody>
-            <% }) %>
+    <% if (readings.length === 0) { %>
+        <p>You haven't done any readings yet! <a href="/readings/new">Click here to start.</a></p>
         <% } else { %>
-            <p>You don't have any saved readings yet!</p>
+        <% readings.forEach(function(r) { %>
+                <thead>
+                <th>Date Created</th>
+                <th>Question</th>
+                <th>Delete Reading</th>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><%= r.createdAt %></td>
+                    <td><%= r.question %></td>
+                    <td><a href="/readings/<%= r._id %>">See Full Reading</a></td>
+                    <form action="/readings/<%= r._id %>?_method=DELETE" method="POST">
+                        <td><button type="submit">x</button></td>
+                    </form>                    
+                    </tr>
+                </tbody>
+                <% }) %>
+                <form action="/readings?_method=DELETE" method="POST">
+                    <td><button type="submit">Delete All Readings</button></td>
+                </form> 
         <% } %>
         </table>
 <%- include('../partials/footer') %>

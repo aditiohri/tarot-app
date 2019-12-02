@@ -15,8 +15,11 @@
           <p>            <%= reading.description %>          </p>  
         </div>    
         <form method="GET" action="/readings/<%= reading._id %>">
-            <button>Save Reading</button>
+            <button>Add Diary Entry to Reading</button>
         </form>
+        <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
+            <td><button type="submit">Delete Reading</button></td>
+        </form>           
     <% } %>
     
 <%- include('../partials/footer') %>

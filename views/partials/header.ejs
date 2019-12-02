@@ -9,8 +9,10 @@
         <h1>Tarot Reading</h1>
         <img src="https://i.imgur.com/AdoK0Wp.png" alt="hand over cup" class="landing-image">
         <ul class="landing-login">
+          <% if (user) { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/readings">View all saved readings</a></li>
             <li>
-            <% if (user) { %>
                 <a href="/logout">Log Out</a>
             <% } else { %>
                 <a href="/auth/google">Login with Google</a>

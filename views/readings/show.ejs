@@ -5,6 +5,7 @@
         <th>Question</th>
         <th>Card Description</th>
         <th>Card Meaning</th>
+        <th>Delete Reading</th>
         </thead>
         <tbody>
             <tr>
@@ -12,6 +13,9 @@
             <td><%= reading.question %></td>
             <td><%= reading.description %></td>
             <td><%= reading.meaning %></td>
+            <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
+                <td><button type="submit">x</button></td>
+            </form>
             </tr>
         </tbody>
     </table>
