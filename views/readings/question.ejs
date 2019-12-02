@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+   
+        <div class="readings-nav">
+          <p>           <%= question %>          </p>
+          <p>             <%= card.name %> </p>
+          <p>             <%= card.meaning_up %>          </p>
+          <p>            <%= card.desc %>          </p>  
+        </div>    
+        <form method="POST" action="/readings">
+            <button>Add to Diary</button>
+        </form>
+        
+    
+<%- include('../partials/footer') %>

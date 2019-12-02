@@ -1,25 +1,9 @@
 <%- include('../partials/header') %>
-    <% if (!card) { %>
-        <form action="/readings" method="POST">
+        <form action="/readings/question" method="GET">
             <label>
                <p>What would you like to ask?</p>
             </label>  
             <input type="text" name="question">
             <input type="submit" value="Pull a card">
-        </form>
-    <% } else { %>
-        <div class="readings-nav">
-          <p>           <%= reading.question %>          </p>
-          <p>             <%= reading.name %> </p>
-          <p>             <%= reading.meaning %>          </p>
-          <p>            <%= reading.description %>          </p>  
-        </div>    
-        <form method="GET" action="/readings/<%= reading._id %>">
-            <button>Add Diary Entry to Reading</button>
-        </form>
-        <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
-            <td><button type="submit">Delete Reading</button></td>
         </form>           
-    <% } %>
-    
 <%- include('../partials/footer') %>

@@ -5,6 +5,7 @@ const rootURL = 'https://rws-cards-api.herokuapp.com/api/v1/cards/random';
 module.exports = {
     new: newCard,
     pull: pullCard,
+    add: addCard,
     show,
     index,
     deleteOne,
@@ -56,23 +57,29 @@ function newCard (req, res) {
 
 function pullCard (req, res) {
     console.log('reading starts');
-    let reading = new Reading(req.body);
-    console.log('reading at start: ', reading);
+    console.log('question: ', question);
     request(rootURL, function (err, response, body) {
-        let pull = JSON.parse(body)
-        console.log('pull: ', pull);
+        let pull = JSON.parse(body);
         let card = pull.cards[0];
+        console.log(card);
+        if (err) return res.render('/error');
+            res.render(`readings/question`,  {
+                user: req.user,
+                question,
+                card
+            });
+        })
+}
+
+function addCard (req, res) {
+    let reading = new Reading(req.body);
+        reading.question = question;
         reading.name = card.name;
         reading.description = card.desc;
         reading.meaning = card.meaning_up;
         console.log('reading at end: ', reading);
         reading.save(function(err){
             if (err) return res.render('/error');
-            res.render(`readings/new`,  {
-                user: req.user,
-                card: reading.name,
-                reading
-            });
+            res.redirect('/readings');
         })
-})
 }
