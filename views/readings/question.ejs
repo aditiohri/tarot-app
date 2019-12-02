@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
-   
-        <div class="readings-nav">
-          <p>           <%= question %>          </p>
-          <p>             <%= card.name %> </p>
-          <p>             <%= card.meaning_up %>          </p>
-          <p>            <%= card.desc %>          </p>  
+
+<div class="readings-nav">
+    <form method="POST" action="/readings">
+          <label for="question">
+              <input name="question" type="text" value="<%= question %>">  </input>
+          </label>
+          <input name="name"     type="text" value="<%= cardName %>"> </input>
+          <input name="meaning" type="text" value="<%= cardMean %>">        </input>
+          <input name="desc" type="text" value="<%= cardDesc %>">          </input>  
         </div>    
-        <form method="POST" action="/readings">
-            <button>Add to Diary</button>
-        </form>
+            <button type="submit">Add to Diary</button>
+    </form>
         
     
 <%- include('../partials/footer') %>

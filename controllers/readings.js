@@ -57,7 +57,7 @@ function newCard (req, res) {
 
 function pullCard (req, res) {
     console.log('reading starts');
-    console.log('question: ', question);
+    console.log('question: ', req.body.question);
     request(rootURL, function (err, response, body) {
         let pull = JSON.parse(body);
         let card = pull.cards[0];
@@ -65,21 +65,25 @@ function pullCard (req, res) {
         if (err) return res.render('/error');
             res.render(`readings/question`,  {
                 user: req.user,
-                question,
-                card
+                question: req.body.question,
+                cardName: card.name,
+                cardDesc: card.desc,
+                cardMean: card.meaning_up
             });
         })
 }
 
 function addCard (req, res) {
     let reading = new Reading(req.body);
-        reading.question = question;
-        reading.name = card.name;
-        reading.description = card.desc;
-        reading.meaning = card.meaning_up;
-        console.log('reading at end: ', reading);
-        reading.save(function(err){
-            if (err) return res.render('/error');
-            res.redirect('/readings');
-        })
+    console.log('question: ', req.body.question);
+    reading.question = req.body.question;
+    reading.name = req.body.cardName;
+    reading.description = req.body.cardDesc;
+    reading.meaning = req.body.cardMean;
+    console.log('reading at end: ', reading);
+    reading.save(function(err){
+        console.log('saved reading: ', reading)
+        if (err) return res.render('/error');
+        res.redirect('/readings');
+    })
 }
