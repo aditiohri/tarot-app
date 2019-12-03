@@ -3,25 +3,24 @@ const router = express.Router();
 const readingsCtrl = require('../controllers/readings');
 
 //get new reading form
-router.get('/new', readingsCtrl.new);
+router.get('/new', isLoggedIn, readingsCtrl.new);
 //show saved individual reading
-router.get('/:id', readingsCtrl.show);
+router.get('/:id', isLoggedIn, readingsCtrl.show);
 //show index of all readings
-router.get('/', isLoggedIn, readingsCtrl.index);
+router.get('/', readingsCtrl.index);
 //generate reading from API
-router.post('/question', readingsCtrl.pull);
+router.post('/question', isLoggedIn, readingsCtrl.pull);
 //save reading in collection
-router.post('/', readingsCtrl.add);
+router.post('/', isLoggedIn, readingsCtrl.add);
 //edit reading interpretations
-router.post('/:id/edit', readingsCtrl.edit);
+router.post('/:id/edit', isLoggedIn, readingsCtrl.edit);
 //show edited reading
-router.put('/:id', readingsCtrl.show);
+router.put('/:id', isLoggedIn, readingsCtrl.update);
 //delete individual reading
-router.delete('/:id', readingsCtrl.deleteOne);
+router.delete('/:id', isLoggedIn, readingsCtrl.deleteOne);
 //delete all readings
-router.delete('/', readingsCtrl.deleteAll);
-//add reading comments
-// router.post('/:id', readingsCtrl.update);
+router.delete('/', isLoggedIn, readingsCtrl.deleteAll);
+
 
 
 //middleware for login
