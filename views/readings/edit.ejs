@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 <div class="readings-nav">
-        <form method="POST" action="/readings/<%= reading._id %>">
+        <form method="POST" action="/readings/<%= reading._id %>?_method=PUT">
               <label for="question">
-                  <input name="question" value="<%= question %>">  </input>
+                  <input name="question" value="<%= reading.question %>">  </input>
               </label>
               <label for="name">
-                  <input name="name" value="<%= cardName %>"> </input>
+                  <input name="name" value="<%= reading.name %>"> </input>
               </label>
               <label for="meaning">
-                  <input name="meaning" value="<%= cardMean %>">        </input>
+                  <input name="meaning" value="<%= reading.meaning %>">        </input>
               </label>
               <label for="desc">
-                  <input name="desc" value="<%= cardDesc %>">          </input>  
+                  <input name="desc" value="<%= reading.description %>">          </input>  
               </label>
-              <button type="submit">Add to Diary</button>
+              <button type="submit">Update Diary</button>
             </form>
         </div>    
 <%- include('../partials/footer') %>

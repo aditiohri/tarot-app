@@ -7,16 +7,27 @@
                 <thead>
                 <th>Date Created</th>
                 <th>Question</th>
+                <th>Card Name</th>
+                <th>Full Reading Link</th>
+                <th>Edit Reading</th>
                 <th>Delete Reading</th>
                 </thead>
                 <tbody>
                     <tr>
                     <td><%= r.createdAt %></td>
                     <td><%= r.question %></td>
+                    <td><%= r.name %></td>
                     <td><a href="/readings/<%= r._id %>">See Full Reading</a></td>
+                    <td> 
+                        <form action="/readings/<%= r._id %>/edit" method="GET"> 
+                            <button type="submit">*</button>
+                    </form>
+                    </td>
+                    <td>
                     <form action="/readings/<%= r._id %>?_method=DELETE" method="POST">
-                        <td><button type="submit">x</button></td>
-                    </form>                    
+                        <button type="submit">x</button>
+                    </form>  
+                    </td>                  
                     </tr>
                 </tbody>
                 <% }) %>

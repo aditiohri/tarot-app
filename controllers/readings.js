@@ -9,6 +9,7 @@ module.exports = {
     pull: pullCard,
     add: addCard,
     edit,
+    update,
     deleteAll,
     deleteOne,
 };
@@ -70,33 +71,45 @@ function addCard (req, res) {
     reading.save(function(err){
         console.log('saved reading: ', reading)
         if (err) return res.render('/error');
-        res.redirect('/readings');
+        res.redirect('readings');
     })
 }
 
-function edit(req, res) {
-    let reading = new Reading(req.body);
-    console.log('question: ', req.body.question);
+function edit (req, res) {
+Reading.findById(req.params.id, function(err, reading){
+    res.render('readings/edit', {
+        user: req.user,
+        reading
+    })
+})
+}
+
+function update(req, res) {
+Reading.findById(req.params.id, function(err, reading){
     reading.question = req.body.question;
     reading.name = req.body.name;
     reading.description = req.body.desc;
     reading.meaning = req.body.meaning;
-    console.log('reading at end: ', reading);
+    console.log('reading after edit: ', reading);
     reading.save(function(err){
         console.log('saved reading: ', reading)
         if (err) return res.render('/error');
-        res.redirect('/readings/edit');
-    })
+        res.render(`readings/show`, {
+            user: req.user,
+            reading
+        });
+})  
+})
 }
 
 function deleteAll(req, res) {
 Reading.deleteMany({}, function(err, reading){
-    res.redirect('/readings');
+    res.redirect('readings');
 })
 }
 
 function deleteOne(req, res) {
 Reading.findByIdAndDelete(req.params.id, function(err, reading){
-    res.redirect('/readings');
+    res.redirect('readings');
 })
 }

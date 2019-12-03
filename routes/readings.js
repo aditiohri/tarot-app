@@ -7,14 +7,14 @@ router.get('/new', isLoggedIn, readingsCtrl.new);
 //show saved individual reading
 router.get('/:id', isLoggedIn, readingsCtrl.show);
 //show index of all readings
-router.get('/', readingsCtrl.index);
+router.get('/', isLoggedIn, readingsCtrl.index);
+//get form to edit readings
+router.get('/:id/edit', isLoggedIn, readingsCtrl.edit);
 //generate reading from API
-router.post('/question', isLoggedIn, readingsCtrl.pull);
+router.post('/question', readingsCtrl.pull);
 //save reading in collection
 router.post('/', isLoggedIn, readingsCtrl.add);
-//edit reading interpretations
-router.post('/:id/edit', isLoggedIn, readingsCtrl.edit);
-//show edited reading
+//update reading after edit
 router.put('/:id', isLoggedIn, readingsCtrl.update);
 //delete individual reading
 router.delete('/:id', isLoggedIn, readingsCtrl.deleteOne);

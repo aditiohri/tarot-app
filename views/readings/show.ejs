@@ -3,16 +3,24 @@
         <thead>
         <th>Date Created</th>
         <th>Question</th>
+        <th>Card Name</th>
         <th>Card Description</th>
         <th>Card Meaning</th>
+        <th>Edit Reading</th>
         <th>Delete Reading</th>
         </thead>
         <tbody>
             <tr>
             <td><%= reading.createdAt %></td>
             <td><%= reading.question %></td>
+            <td><%= reading.name %></td>
             <td><%= reading.description %></td>
             <td><%= reading.meaning %></td>
+            <td> 
+                    <form action="/readings/<%= reading._id %>/edit" method="GET"> 
+                        <button type="submit">*</button>
+                </form>
+                </td>
             <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
                 <td><button type="submit">x</button></td>
             </form>
