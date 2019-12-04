@@ -58,6 +58,7 @@
                         <td><%= diary.mood %></td>
                         <td><%= diary.events %></td>
                         <td><%= diary.int %></td>
+                        <td><form action="/comments/<%= reading._id %>?_method=DELETE" method="POST"><button type="submit">DELETE ENTRY</button></form></td>
                     <% }) %>
                 </tbody>
             </table>
