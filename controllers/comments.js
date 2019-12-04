@@ -20,16 +20,11 @@ Reading.findById(req.params.id, function(err, reading){
 }
 
 function deleteComment(req, res){
-    console.log('deleting...');
-    console.log('req.params.id: ', req.params.id);
-    console.log('req.params.idt: ', req.params.id);
 Reading.findById(req.params.id, function(err, reading){
     if (err) return res.render('/error');
     let diary = reading.diary;
-    console.log('diary before: ', diary)
     let id = diary.indexOf(diary);
     diary.splice(id, 1)        
-    console.log('diary after: ', diary)
     reading.save(function(err){
         res.redirect(`/readings/${reading._id}`)
     })
