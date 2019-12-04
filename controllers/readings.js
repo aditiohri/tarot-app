@@ -103,13 +103,15 @@ Reading.findById(req.params.id, function(err, reading){
 }
 
 function deleteAll(req, res) {
-Reading.deleteMany({}, function(err, reading){
-    res.redirect('readings');
+Reading.deleteMany({}, function(err){
+    if (err) return res.render('/error');
+    res.redirect('/readings');
 })
 }
 
 function deleteOne(req, res) {
-Reading.findByIdAndDelete(req.params.id, function(err, reading){
-    res.redirect('readings');
+Reading.findByIdAndDelete(req.params.id, function(err){
+    if (err) return res.render('/error');
+    res.redirect('/readings');
 })
 }

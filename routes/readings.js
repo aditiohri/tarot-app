@@ -2,24 +2,26 @@ const express = require('express');
 const router = express.Router();
 const readingsCtrl = require('../controllers/readings');
 
+//mounted before protected routes
+router.use(isLoggedIn);
 //get new reading form
-router.get('/new', isLoggedIn, readingsCtrl.new);
+router.get('/new', readingsCtrl.new);
 //show saved individual reading
-router.get('/:id', isLoggedIn, readingsCtrl.show);
+router.get('/:id', readingsCtrl.show);
 //show index of all readings
-router.get('/', isLoggedIn, readingsCtrl.index);
+router.get('/', readingsCtrl.index);
 //get form to edit readings
-router.get('/:id/edit', isLoggedIn, readingsCtrl.edit);
+router.get('/:id/edit', readingsCtrl.edit);
 //generate reading from API
 router.post('/question', readingsCtrl.pull);
 //save reading in collection
-router.post('/', isLoggedIn, readingsCtrl.add);
+router.post('/', readingsCtrl.add);
 //update reading after edit
-router.put('/:id', isLoggedIn, readingsCtrl.update);
+router.put('/:id', readingsCtrl.update);
 //delete individual reading
-router.delete('/:id', isLoggedIn, readingsCtrl.deleteOne);
+router.delete('/:id', readingsCtrl.deleteOne);
 //delete all readings
-router.delete('/', isLoggedIn, readingsCtrl.deleteAll);
+router.delete('/', readingsCtrl.deleteAll);
 
 
 

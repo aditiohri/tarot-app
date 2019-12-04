@@ -5,7 +5,7 @@ const commentSchema = new Schema({
 keywords: String,
 mood: String,
 events: String,
-interpretation: String
+int: String
 }, {
     timestamps: true
 })
@@ -13,7 +13,7 @@ interpretation: String
 const readingSchema = new Schema({
 question: String,
 name: String,
-description: String,
+desc: String,
 meaning: String,
 diary: [commentSchema]
 }, {
