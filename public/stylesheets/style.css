@@ -1,3 +1,23 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  font-family: "Homemade Apple", cursive; 
+}
+
+h6 h5 h4 h3 h2 h1 {
+  font-family: "Homemade Apple" !important;
+}
+
+.most {
+  font-family: 'Roboto', sans-serif;
+}
+
+.center-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 3% 0% 2% 0%; */
+}
+
 .header-logo {
   width: 20rem;
   overflow: hidden;
@@ -50,6 +70,23 @@ label, input {
 
 input {
   font-weight: bold;
+}
+
+.center-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3% 0% 2% 0%;
+}
+
+.material-icons {
+  vertical-align: bottom;
+}
+
+.align {
+  vertical-align: top;
+  margin-top: -2rem;
+  /* margin-inline-start: -1rem; */
 }
 
 /* * {
