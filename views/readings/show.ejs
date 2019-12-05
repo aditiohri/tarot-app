@@ -56,19 +56,15 @@
     <div class="row">
             <div class="col s12">
                     <form action="/readings/<%= reading._id %>/comments" method="POST">
-                    Add Diary Entry
-                        <label>Card Keywords
-                            <input name="keywords" value="What are some keywords you associate with <%= reading.name %>?">  </input>
-                            </label>
-                            <label>Mood
-                                <input name="mood" value="Describe your mood when you pulled <%= reading.name %>"> </input>
-                            </label>
-                            <label>Events
-                                <input name="events" value="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></input>
-                            </label>
-                            <label>Interpretation for <%= reading.name %>
-                                <input name="int" value="What is your personal interpretation for <%= reading.name %>?">          </input>  
-                            </label>
+                    <p> Add Diary Entry </p>
+                        <label>Card Keywords</label>
+                            <textarea name="keywords" placeholder="What are some keywords you associate with <%= reading.name %>?"></textarea>
+                            <label>Mood</label>
+                                <textarea name="mood" placeholder="Describe your mood when you pulled <%= reading.name %>"></textarea>
+                            <label>Events</label>
+                                <textarea name="events" placeholder="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></textarea>
+                            <label>Interpretation for <%= reading.name %></label>
+                                <textarea name="int" placeholder="What is your personal interpretation for <%= reading.name %>?"></textarea>  
                             <button type="submit">Add to Diary</button>
                         </form>
             </div></div>
