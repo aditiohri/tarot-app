@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<div class="readings-nav">
+<div class="col s12 m4 l8">
         <form method="POST" action="/readings/<%= reading._id %>?_method=PUT">
               <label>Question
                   <input name="question" value="<%= reading.question %>"></input>

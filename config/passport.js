@@ -16,7 +16,8 @@ function(accessToken, refreshToken, profile, cb) {
             var newUser = new User({
                 name: profile.displayName,
                 email: profile.emails[0].value,
-                googleId: profile._id
+                googleId: profile._id,
+                avatar: profile.photos[0].value
            });
            newUser.save(function(err) {
                if (err) return cb (err);

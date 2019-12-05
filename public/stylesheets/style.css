@@ -1,12 +1,39 @@
 .header-logo {
+  width: 20rem;
+  overflow: hidden;
+}
+.header-logo-landing {
   width: 40rem;
   overflow: hidden;
+}
+.site-logo-landing {
+  margin: -3rem;
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header-logo .site-logo {
   margin: -3rem;
   max-height: 50%;
   max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: #B89663;
+  color: #280000;
+}
+
+a {
+  color: #AD22CD;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CEB82E;
 }
 /* * {
   box-sizing: border-box;

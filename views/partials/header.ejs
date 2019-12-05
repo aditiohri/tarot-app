@@ -9,23 +9,36 @@
     <title>Tarot Reading</title>
   </head>
   <body>
-    <div class="row">
-      <div class = "col s12 m4 l3">
-        <h1>Tarot Reading</h1>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+
+    <% if (user) { %>
+      <div class="row">
+      <div class = "col s12 m4 l2">
         <section class="header-logo">
-          <img src="/images/logo.jpg" class="site-logo" alt="queen of cups logo">
+          <img src="/images/logo.png" class="site-logo" alt="queen of cups logo">
         </section>
         <ul class="landing-login">
-          <% if (user) { %>
           <li><a href="/">Home</a></li>
           <li><a href="/readings/new">Do a one-card Tarot reading!</a></li>
           <li><a href="/readings">View all saved readings</a></li>
             <li>
-                <a href="/logout">Log Out</a>
+                <a href="/logout"><i class="material-icons">lock</i>Log Out</a>
+              </ul>
+            </div>
             <% } else { %>
-                <a href="/auth/google">Login with Google</a>
+              <div class="row">
+              <div class="col s12 offset-s4">
+                <section class="header-logo-landing">
+                  <h1>Tarot Reading</h1>
+                  <img src="/images/logo.png" class="site-logo-landing" alt="queen of cups logo">
+                </section>    
+                  <ul class="landing-login">
+                <li><a href="/auth/google"><i class="material-icons">vpn_key</i>
+                  Login with Google</a>
+                </li>
+              </ul>
+            </div>
+            </div>
             <% } %>
-            </li>
-        </ul>
-      </div>
-    </div>

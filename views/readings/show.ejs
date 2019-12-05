@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<div class="col s12">
 <table>
         <thead>
         <th>Date Created</th>
@@ -27,23 +28,10 @@
             </tr>
         </tbody>
     </table>
-    <div class="comments">
-        <form action="/readings/<%= reading._id %>/comments" method="POST">
-        Add Diary Entry
-            <label>Card Keywords
-                <input name="keywords" value="What are some keywords you associate with <%= reading.name %>?">  </input>
-                </label>
-                <label>Mood
-                    <input name="mood" value="Describe your mood when you pulled <%= reading.name %>"> </input>
-                </label>
-                <label>Events
-                    <input name="events" value="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></input>
-                </label>
-                <label>Interpretation for <%= reading.name %>
-                    <input name="int" value="What is your personal interpretation for <%= reading.name %>?">          </input>  
-                </label>
-                <button type="submit">Add to Diary</button>
-            </form>
+</div>
+</div>
+<div class="row">
+    <div class="col s12">
             <table>
                 Diary
                 <thead>
@@ -63,5 +51,26 @@
                 </tbody>
             </table>
         </div>
+    </div>
 
+    <div class="row">
+            <div class="col s12">
+                    <form action="/readings/<%= reading._id %>/comments" method="POST">
+                    Add Diary Entry
+                        <label>Card Keywords
+                            <input name="keywords" value="What are some keywords you associate with <%= reading.name %>?">  </input>
+                            </label>
+                            <label>Mood
+                                <input name="mood" value="Describe your mood when you pulled <%= reading.name %>"> </input>
+                            </label>
+                            <label>Events
+                                <input name="events" value="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></input>
+                            </label>
+                            <label>Interpretation for <%= reading.name %>
+                                <input name="int" value="What is your personal interpretation for <%= reading.name %>?">          </input>  
+                            </label>
+                            <button type="submit">Add to Diary</button>
+                        </form>
+            </div></div>
+</div>
 <%- include('../partials/footer') %>

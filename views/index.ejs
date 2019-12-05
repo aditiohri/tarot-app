@@ -1,7 +1,9 @@
 <%- include('./partials/header') %>
-<div class="readings-nav">
     <% if (user) { %>
-        User's Name + Google Pic
+            <div class="col s12 m4 l8">
+                <p>Welcome <%= user.name %>!</p>
+                <img src="<%= user.avatar %>" alt="user profile picture" class="responsive-img circle">
+            </div>
+        </div>
     <% } %>
-</div>
 <%- include('./partials/footer') %>
