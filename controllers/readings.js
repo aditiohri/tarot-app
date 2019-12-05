@@ -18,7 +18,7 @@ module.exports = {
 
 //show all readings saved by user
 function index(req, res){
-Reading.find({}, function(err, readings){
+Reading.find({user: req.user.name}, function(err, readings){
     res.render(`readings/index`, {
         user: req.user,
         readings
