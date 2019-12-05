@@ -81,18 +81,6 @@ function addCard (req, res) {
     })
     newReading.save(function(err, reading) {});
 }
-// function addCard (req, res) {
-//     let reading = new Reading(req.body);
-//     reading.question = req.body.question;
-//     reading.name = req.body.name;
-//     reading.description = req.body.desc;
-//     reading.meaning = req.body.meaning;
-//     reading.save(function(err){
-//         console.log('saved reading: ', reading)
-//         if (err) return res.render('/error');
-//         res.redirect('readings');
-//     })
-// }
 
 //edit reading content
 function edit (req, res) {
@@ -109,7 +97,7 @@ function update(req, res) {
 Reading.findById(req.params.id, function(err, reading){
     reading.question = req.body.question;
     reading.name = req.body.name;
-    reading.description = req.body.desc;
+    reading.desc = req.body.desc;
     reading.meaning = req.body.meaning;
     console.log('reading after edit: ', reading);
     reading.save(function(err){
