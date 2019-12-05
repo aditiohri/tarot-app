@@ -28,6 +28,7 @@ router.delete('/', readingsCtrl.deleteAll);
 //middleware for login
 //put this anywhere in routes where only user can access
 function isLoggedIn(req, res, next){
+    console.log(req.user);
     if (req.isAuthenticated()) return next();
     res.redirect('/auth/google');
 }

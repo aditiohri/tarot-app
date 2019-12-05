@@ -35,6 +35,18 @@ a {
 a:hover {
   color: #CEB82E;
 }
+
+label, input {
+  color: white;
+  font-size: 250%;
+  margin: 1%;
+  padding: 1%
+}
+
+input {
+  font-weight: bold;
+}
+
 /* * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;

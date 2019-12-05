@@ -11,6 +11,7 @@ int: String
 })
 
 const readingSchema = new Schema({
+user: String,
 question: String,
 name: String,
 desc: String,

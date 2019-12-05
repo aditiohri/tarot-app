@@ -5,7 +5,13 @@ const userSchema = new Schema({
     name: String,
     email: String,
     googleId: String,
-    avatar: String
+    avatar: String,
+    readings: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Reading'
+        }
+    ]
 }, {
     timestamps: true
 });
