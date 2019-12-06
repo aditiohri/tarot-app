@@ -28,7 +28,7 @@ ________________
 * Passport for user authentication via Google
 * Google API Library
 * Mongoose & MongoDB Atlas Cluster
-* EJS / HTML / CSS / Javascript
+* EJS / HTML / Materialize CSS / Javascript
 * Node.js & Express
 
 [top](#home)
