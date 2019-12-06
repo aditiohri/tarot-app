@@ -12,10 +12,14 @@ ________________
 
 Tarot is more than a fortune-telling oracle - it is a means to self-knowledge and wisdom. Today, anyone can learn its 78-card system. Tarot Diary offers users the opportunity to perform one-card readings and build their own diary of card meanings.
 
+[top](#home)
+
 ## <a name="ui"></a> **User Experience**
 ________________
 
 Coming soon...
+
+[top](#home)
 
 ## <a name="tech"></a> **Tech**
 ________________
@@ -27,11 +31,16 @@ ________________
 * EJS / HTML / CSS / Javascript
 * Node.js & Express
 
+[top](#home)
+
 ## <a name="start"></a> **Getting Started**
 ________________
 
 [Queen of Cups Tarot Diary](http://readtarot.herokuapp.com)
+
 Click the link above to begin! Sign in with your Google profile to start pulling cards and writing card meanings.
+
+[top](#home)
 
 ## <a name="stretch"></a> **Stretch Goals**
 ________________
@@ -42,3 +51,5 @@ ________________
 * Create a Card schema + cross-user database that allows users to share their card meanings
 * Add images to the card meanings
 * Users can do 3-card readings
+
+[top](#home)
