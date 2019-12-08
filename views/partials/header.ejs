@@ -11,24 +11,27 @@
   </head>
   <body>
     <% if (user) { %>
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="row"></div>
-      <div class="row">
-      <div class = "col s12 m4 l2">
-        <section class="header-logo">
-          <img src="/images/logo.png" class="site-logo" alt="queen of cups logo">
-        </section>
-          <h6>Queen of Cups</h6> 
-          <h6>Tarot Diary</h6>
-        <ul class="landing-login most center-index">
-          <li><a href="/">Home</a></li>
-          <li><a href="/readings/new">Do a one-card Tarot reading!</a></li>
-          <li><a href="/readings">View all saved readings</a></li>
-            <li>
-                <a href="/logout"><i class="material-icons">lock</i>Log Out</a>
-              </ul>
-            </div>
+     <nav class="amber" role="navigation">
+       <div class="nav-wrapper container">
+            <ul class="left hide-on-med-and-down most">
+              <li><a href="/">Home</a></li>
+              <li><a href="/readings/new">Do a one-card Tarot reading!</a></li>
+              <li><a href="/readings">View all saved readings</a></li>
+            </ul>
+              <ul class="right hide-on-med-and-down most">
+                  <li> <a href="/logout"><i class="material-icons right align-icon">lock</i> Log Out</a></li>
+                </ul>
+            <ul id="nav-mobile" class="sidenav amber">
+              <li><a href="/">Home</a></li>
+              <li><a href="/readings/new">Do a one-card Tarot reading!</a></li>
+              <li><a href="/readings">View all saved readings</a></li>
+              <li class="inline-icons"><a href="/logout"><i class="material-icons left align-icon">lock</i><span>Log Out</span></a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          </div>
+          </nav>
+
+      
             <% } else { %>
               <div class="col s12 offset-1 center-index">
                 <section class="header-logo-landing center-index">
@@ -37,7 +40,7 @@
                   <img src="/images/logo.png" class="site-logo-landing" alt="queen of cups logo">
                   <ul class="landing-login most align center-index">
                       <a href="/auth/google">
-                        <li><span class="align"><i class="material-icons">vpn_key</i>  Login with Google</span></li>
+                        <li><i class="material-icons left align-icon">vpn_key</i>Login with Google</li>
                     </a>
                   </ul>
                   </section>
