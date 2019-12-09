@@ -15,14 +15,24 @@ h6 h5 h4 h3 h2 h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 3% 0% 2% 0%; */
 }
 
-.header-logo {
+/* .header-logo {
   width: 20rem;
   overflow: hidden;
 }
+.header-logo .site-logo {
+  margin: -3rem;
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
 .header-logo-landing {
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
   width: 40rem;
   overflow: hidden;
 }
@@ -39,20 +49,14 @@ h6 h5 h4 h3 h2 h1 {
   max-width: 50%;
 }
 
-.header-logo .site-logo {
-  margin: -3rem;
-  max-height: 50%;
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 body {
   background-color: #B89663;
   color: #280000;
 }
 
-a {
+a, nav li a, .sidenav li > a {
   color: #AD22CD;
   text-decoration: none;
 }
@@ -60,6 +64,27 @@ a {
 a:hover {
   color: #CEB82E;
 }
+
+nav ul li a:hover, .sidenav ul li > a:hover  {
+  color: #CEB82E;
+  background-color: #AD22CD;
+}
+/* .sidenav .collapsible-body > ul:not(.collapsible) > li.active,
+.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
+  background-color: #CEB82E;
+} */
+
+/* nav ul a  {
+  color: #AD22CD;
+  text-decoration: none;
+} */
+
+/* 
+nav ul a:hover {
+  color: #CEB82E;
+} */
+
+
 
 label, input {
   color: white;
