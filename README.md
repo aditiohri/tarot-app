@@ -1,10 +1,10 @@
-# **Tarot Diary**
+## [**Tarot Diary**](http://readtarot.herokuapp.com)
 
 ### <a name="home"></a> **Contents**
 1. [Description](#desc)
-2. [User Experience](#ui)
-3. [Tech](#tech)
-4. [Getting Started](#start)
+2. [Getting Started](#start)
+3. [User Experience](#ui) 
+4. [Tech](#tech)
 5. [Stretch Goals](#stretch)
 
 ## <a name="desc"></a> **Description**
@@ -14,10 +14,47 @@ Tarot is more than a fortune-telling oracle - it is a means to self-knowledge an
 
 [top](#home)
 
+## <a name="start"></a> **Getting Started**
+________________
+
+[Tarot Diary](http://readtarot.herokuapp.com)
+
+Click the link above to begin! Sign in with your Google profile to start pulling cards and writing card meanings.
+
+[top](#home)
+
 ## <a name="ui"></a> **User Experience**
 ________________
 
-Coming soon...
+**Landing**
+
+![Landing page](./public/images/UI/0.png)
+
+**User Login**
+
+![User Login](./public/images/ui/1.png)
+
+**Pull A Card**
+
+![Pull a Card](./public/images/ui/2.png)
+
+![Card returns](./public/images/ui/3.png)
+
+**View All Cards**
+
+![Card Index](./public/images/ui/4.png)
+
+**Edit Individual Card Meanings**
+
+![Card Index](./public/images/ui/5.png)
+
+**View Card Meanings and Add Diary Entries**
+
+![Card Index](./public/images/ui/6.png)
+
+**Option to Delete Diary Entry**
+
+![Card Index](./public/images/ui/7.png)
 
 [top](#home)
 
@@ -33,18 +70,10 @@ ________________
 
 [top](#home)
 
-## <a name="start"></a> **Getting Started**
-________________
-
-[Queen of Cups Tarot Diary](http://readtarot.herokuapp.com)
-
-Click the link above to begin! Sign in with your Google profile to start pulling cards and writing card meanings.
-
-[top](#home)
-
 ## <a name="stretch"></a> **Stretch Goals**
 ________________
 
+* Continue styling the app
 * In the update function, allow users to use placeholder text to edit their card meanings
 * Users can edit comments to their personal readings
 * Users can query their own databases
