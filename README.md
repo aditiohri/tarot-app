@@ -19,7 +19,7 @@ ________________
 
 [Tarot Diary](http://readtarot.herokuapp.com)
 
-Click the link above to begin! Sign in with your Google profile to start pulling cards and writing card meanings.
+Click the link above to begin! Sign in with your Google profile to start pulling cards and writing card meanings. You can edit the meanings of each card that you pull and add diary entries for each individual card.
 
 [top](#home)
 

@@ -5,7 +5,7 @@ module.exports = {
     delete: deleteComment
 } 
     
-
+// create diary entry (comment)
 function create(req, res){
 console.log('creating...');
 Reading.findById(req.params.id, function(err, reading){
@@ -19,6 +19,7 @@ Reading.findById(req.params.id, function(err, reading){
 })
 }
 
+// delete diary entry (comment)
 function deleteComment(req, res){
 Reading.findById(req.params.id, function(err, reading){
     if (err) return res.render('/error');
