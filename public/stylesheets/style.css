@@ -65,14 +65,10 @@ a:hover {
   color: #CEB82E;
 }
 
-nav ul li a:hover, .sidenav ul li > a:hover  {
+nav ul li a:hover, .sidenav li > a:hover, a > .material-icons:hover  {
   color: #CEB82E;
   background-color: #AD22CD;
 }
-/* .sidenav .collapsible-body > ul:not(.collapsible) > li.active,
-.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
-  background-color: #CEB82E;
-} */
 
 /* nav ul a  {
   color: #AD22CD;
