@@ -1,11 +1,19 @@
 <%- include('../partials/header') %>
-<div class="col s12 m4 l8">
-        <form action="/readings/question" method="POST">
-            <label>
-               <p>What would you like to ask?</p>
-            </label>  
-            <input type="text" name="question">
-            <button type="submit">Pull a Card</button>
-        </form>     
-    </div>      
+
+<div class="container">
+        <div class="section no-pad-bot most">
+            <div class="container">
+                <div class="section">
+                        <form action="/readings/question" method="POST" class="most">
+                            <label>
+                               <p>What would you like to ask the Tarot?</p>
+                            </label>  
+                            <input type="text" name="question">
+                            <button class="btn waves-effect waves-purple purple darken-4" type="submit" name="action">
+                                    <i class="material-icons right">brightness_4</i>Pull a Card</button>
+                        </form>   
+                </div>
+            </div>
+        </div>
+   </div>     
 <%- include('../partials/footer') %>

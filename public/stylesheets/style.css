@@ -1,14 +1,15 @@
 html {
-  font-family: 'Roboto', sans-serif;
-  font-family: "Homemade Apple", cursive; 
+  font-family: "Roboto", sans-serif;
+  font-family: "Homemade Apple", cursive;
 }
 
-h6 h5 h4 h3 h2 h1, .some {
+h6 h5 h4 h3 h2 h1,
+.some {
   font-family: "Homemade Apple" !important;
 }
 
 .most {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .center-index {
@@ -44,48 +45,47 @@ h6 h5 h4 h3 h2 h1, .some {
   max-width: 50%;
 }
 
-
-
 body {
-  background-color: #B89663;
+  background-color: #b89663;
   color: #280000;
 }
 
-a, nav li a, .sidenav li > a {
-  color: #AD22CD;
+a,
+nav li a,
+.sidenav li > a {
+  color: #ad22cd;
   text-decoration: none;
 }
 
 a:hover {
-  color: #CEB82E;
+  color: #ceb82e;
 }
 
-nav ul li a:hover, .sidenav li > a:hover, a > .material-icons:hover  {
-  color: #CEB82E;
-  background-color: #AD22CD;
+nav ul li a:hover,
+.sidenav li > a:hover,
+a > .material-icons:hover {
+  color: #ceb82e;
+  background-color: #ad22cd;
 }
 
-/* nav ul a  {
-  color: #AD22CD;
-  text-decoration: none;
-} */
-
-/* 
-nav ul a:hover {
-  color: #CEB82E;
-} */
-
-
-
-label, input {
-  color: white;
-  font-size: 250%;
+label,
+input {
+  color: #280000; 
+  font-size: 150%;
   margin: 1%;
-  padding: 1%
+  padding: 1%;
 }
 
 input {
   font-weight: bold;
+}
+
+.input-field .prefix.active {
+  color:#280000;
+}
+
+.btn-pull {
+ background-color:#280000;
 }
 
 .center-index {
@@ -102,72 +102,10 @@ input {
 }
 
 .align-icon {
-  margin-top: -.2rem;
+  margin-top: -0.2rem;
 }
 
 .align {
   vertical-align: top;
   margin-top: -2rem;
 }
-
-/* * {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: 'Homemade Apple', cursive;
-}
-
-body {
-  background-color: #B89663;
-  color: #280000;
-}
-
-a {
-  color: #AD22CD;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #CEB82E;
-}
-
-.login-container {
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 10vh;
-}
-
-.readings-nav {
-  display: flex;
-  align-self: flex-start;
-}
-
-.landing-image {
-  height: 55vh;
-}
-
-ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-li {
-  list-style: none;
-  margin: 0;
-}
-
-.lost-container {
-  font-family: 'Homemade Apple', cursive;
-  background-image: url('https://i.imgur.com/Z0QZaKk.jpg');
-  box-sizing: border-box;
-  height: 70vh;
-  width: 70vw;
-  display: flex;
-  flex-flow: row nowrap;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-} */
