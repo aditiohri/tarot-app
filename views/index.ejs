@@ -1,9 +1,16 @@
 <%- include('./partials/header') %>
     <% if (user) { %>
-            <div class="col s12 m4 l8">
-                <p>Welcome <%= user.name %>!</p>
-                <img src="<%= user.avatar %>" alt="user profile picture" class="responsive-img circle">
-            </div>
-        </div>
+     <div class="container">
+         <div class="section no-pad-bot most">
+             <div class="container">
+                 <div class="section">
+                     <h6>Welcome to your Tarot Diary, <%= user.name %>!</h3>
+                        <br>
+                       <img src="<%= user.avatar %>" alt="user profile picture" class="profile-pic circle">
+                 </div>
+             </div>
+         </div>
+    </div>
+       
     <% } %>
 <%- include('./partials/footer') %>

@@ -3,7 +3,7 @@ html {
   font-family: "Homemade Apple", cursive; 
 }
 
-h6 h5 h4 h3 h2 h1 {
+h6 h5 h4 h3 h2 h1, .some {
   font-family: "Homemade Apple" !important;
 }
 
@@ -17,17 +17,12 @@ h6 h5 h4 h3 h2 h1 {
   align-items: center;
 }
 
-/* .header-logo {
-  width: 20rem;
-  overflow: hidden;
-}
-.header-logo .site-logo {
-  margin: -3rem;
-  max-height: 50%;
-  max-width: 50%;
+.profile-pic {
+  max-height: 20%;
+  max-width: 20%;
   margin-left: auto;
   margin-right: auto;
-} */
+}
 
 .header-logo-landing {
   margin-top: 5rem;
