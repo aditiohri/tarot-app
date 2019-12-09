@@ -1,43 +1,45 @@
 <%- include('../partials/header') %>
 
-
-<div class="col s12 m4 l8">
+<div class="container">
+        <div class="section no-pad-bot most">
+            <div class="container">
+                <div class="section">
+                        <% if (readings.length === 0) { %>
+                            <p>You haven't done any readings yet! <a href="/readings/new">Click here to start.</a></p>
+                            <% } else { %>
+                                <table class="responsive-table">
+                                    <thead class="some">
+                                        <tr>
+                                            <th>Date Created</th>
+                                            <th>Question</th>
+                                            <th>Card Name</th>
+                                            <th>Full Reading Link</th>
+                                            <th>Edit Reading</th>
+                                            <th>Delete Reading</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="most">
+                                            <% readings.forEach(function(r) { %>
+                                        <tr>
+                                        <td><%= r.createdAt %></td>
+                                        <td><%= r.question %></td>
+                                        <td><%= r.name %></td>
+                                        <td><a href="/readings/<%= r._id %>">See Full Reading</a></td>
+                                        <td><form action="/readings/<%= r._id %>/edit" method="GET"><button type="submit" class="btn waves-effect waves-amber amber lighten-1"><i class="material-icons">border_clear</i></button></form></td>
+                                        <td><form action="/readings/<%= r._id %>?_method=DELETE" method="POST"><button type="submit" class="btn waves-effect waves-purple deep-purple"><i class="material-icons">delete_outline</i></button></form></td>                  
+                                        </tr>
+                                        <% }) %>
+                                    </tbody>
+                                    <form action="/readings?_method=DELETE" method="POST">
+                                        <td><button class="btn waves-effect waves-red red" type="submit"><i class="material-icons">delete_sweep</i>Delete All Readings</button></td>
+                                    </form> 
+                            <% } %>
+                            </table>
+                </div>
+            </div>
+        </div>
+   </div> 
 <table>
-    <% if (readings.length === 0) { %>
-        <p>You haven't done any readings yet! <a href="/readings/new">Click here to start.</a></p>
-        <% } else { %>
-        <% readings.forEach(function(r) { %>
-                <thead>
-                <th>Date Created</th>
-                <th>Question</th>
-                <th>Card Name</th>
-                <th>Full Reading Link</th>
-                <th>Edit Reading</th>
-                <th>Delete Reading</th>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td><%= r.createdAt %></td>
-                    <td><%= r.question %></td>
-                    <td><%= r.name %></td>
-                    <td><a href="/readings/<%= r._id %>">See Full Reading</a></td>
-                    <td> 
-                        <form action="/readings/<%= r._id %>/edit" method="GET"> 
-                            <button type="submit">*</button>
-                    </form>
-                    </td>
-                    <td>
-                    <form action="/readings/<%= r._id %>?_method=DELETE" method="POST">
-                        <button type="submit">x</button>
-                    </form>  
-                    </td>                  
-                    </tr>
-                </tbody>
-                <% }) %>
-                <form action="/readings?_method=DELETE" method="POST">
-                    <td><button type="submit">Delete All Readings</button></td>
-                </form> 
-        <% } %>
-        </table>
-    </div>
+
+
 <%- include('../partials/footer') %>

@@ -1,16 +1,25 @@
 <%- include('../partials/header') %>
-<div class="col s12 m4 l8 input-field">
-  <form method="POST" action="/readings/<%= reading._id %>?_method=PUT">
-    <label for="question">Question</label>
-    <textarea name="question" placeholder="<%= reading.question %>"></textarea>
-    <label for="name">Card Name</label>
-    <textarea name="name" placeholder="<%= reading.name %>"></textarea>
-    <label for="meaning">Card Meaning</label>
-    <textarea name="meaning" placeholder="<%= reading.meaning %>"></textarea>
-    <label for="desc">Card Description</label>
-    <textarea name="desc" placeholder="<%= reading.desc %>"></textarea>
-    <button type="submit">Update Reading</button>
-  </form>
-</div>
+<div class="container">
+    <div class="section no-pad-bot most">
+        <div class="container">
+            <div class="section">
+                <form method="POST" action="/readings/<%= reading._id %>?_method=PUT">
+                  <label for="question">Question</label>
+                  <textarea name="question" placeholder="<%= reading.question %>"></textarea>
+                  <label for="name">Card Name</label>
+                  <textarea name="name" placeholder="<%= reading.name %>"></textarea>
+                  <label for="meaning">Card Meaning</label>
+                  <textarea name="meaning" placeholder="<%= reading.meaning %>"></textarea>
+                  <label for="desc">Card Description</label>
+                  <textarea name="desc" placeholder="<%= reading.desc %>"></textarea>
+                  <button type="submit">Update Reading</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
 
 <%- include('../partials/footer') %>

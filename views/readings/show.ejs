@@ -1,72 +1,77 @@
 <%- include('../partials/header') %>
-<div class="col s12">
-<table>
-        <thead>
-        <th>Date Created</th>
-        <th>Question</th>
-        <th>Card Name</th>
-        <th>Card Description</th>
-        <th>Card Meaning</th>
-        <th>Edit Reading</th>
-        <th>Delete Reading</th>
-        </thead>
-        <tbody>
-            <tr>
-            <td><%= reading.createdAt %></td>
-            <td><%= reading.question %></td>
-            <td><%= reading.name %></td>
-            <td><%= reading.desc %></td>
-            <td><%= reading.meaning %></td>
-            <td> 
-                    <form action="/readings/<%= reading._id %>/edit" method="GET"> 
-                        <button type="submit">*</button>
-                </form>
-                </td>
-            <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
-                <td><button type="submit">x</button></td>
-            </form>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
-<div class="row">
-    <div class="col s12">
-            <table>
-                Diary
-                <thead>
-                    <% reading.diary.forEach(function(diary){ %>
-                    <th>Card Keywords</th>
-                    <th>Mood</th>
-                    <th>Life Events</th>
-                    <th>Interpretation for <%= reading.name %></th>
-                </thead>
-                <tbody>
-                        <td><%= diary.keywords %></td>
-                        <td><%= diary.mood %></td>
-                        <td><%= diary.events %></td>
-                        <td><%= diary.int %></td>
-                        <td><form action="/comments/<%= reading._id %>?_method=DELETE" method="POST"><button type="submit">DELETE ENTRY</button></form></td>
-                    <% }) %>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div class="container">
+        <div class="section no-pad-bot most">
+            <div class="container">
+                <div class="section">
+                    <table class="responsive-table">
+                            <thead class="some">
+                            <th>Date Created</th>
+                            <th>Question</th>
+                            <th>Card Name</th>
+                            <th>Card Description</th>
+                            <th>Card Meaning</th>
+                            <th>Edit Reading</th>
+                            <th>Delete Reading</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td><%= reading.createdAt %></td>
+                                <td><%= reading.question %></td>
+                                <td><%= reading.name %></td>
+                                <td><%= reading.desc %></td>
+                                <td><%= reading.meaning %></td>
+                                <td> 
+                                        <form action="/readings/<%= reading._id %>/edit" method="GET"> 
+                                            <button type="submit">*</button>
+                                    </form>
+                                    </td>
+                                <form action="/readings/<%= reading._id %>?_method=DELETE" method="POST">
+                                    <td><button type="submit">x</button></td>
+                                </form>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col s12">
+                                    <table>
+                                        <span class="some">Diary</span>
+                                        <thead>
+                                            <% reading.diary.forEach(function(diary){ %>
+                                            <th>Card Keywords</th>
+                                            <th>Mood</th>
+                                            <th>Life Events</th>
+                                            <th>Interpretation for <%= reading.name %></th>
+                                        </thead>
+                                        <tbody>
+                                                <td><%= diary.keywords %></td>
+                                                <td><%= diary.mood %></td>
+                                                <td><%= diary.events %></td>
+                                                <td><%= diary.int %></td>
+                                                <td><form action="/comments/<%= reading._id %>?_method=DELETE" method="POST"><button type="submit">DELETE ENTRY</button></form></td>
+                                            <% }) %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-    <div class="row">
-            <div class="col s12">
-                    <form action="/readings/<%= reading._id %>/comments" method="POST">
-                    <p> Add Diary Entry </p>
-                        <label>Card Keywords</label>
-                            <textarea name="keywords" placeholder="What are some keywords you associate with <%= reading.name %>?"></textarea>
-                            <label>Mood</label>
-                                <textarea name="mood" placeholder="Describe your mood when you pulled <%= reading.name %>"></textarea>
-                            <label>Events</label>
-                                <textarea name="events" placeholder="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></textarea>
-                            <label>Interpretation for <%= reading.name %></label>
-                                <textarea name="int" placeholder="What is your personal interpretation for <%= reading.name %>?"></textarea>  
-                            <button type="submit">Add to Diary</button>
-                        </form>
-            </div></div>
-</div>
+                            <div class="row">
+                                    <div class="col s12">
+                                            <form action="/readings/<%= reading._id %>/comments" method="POST">
+                                                <span class="some">Add Diary Entry</span>
+                                                <br>
+                                                <label>Card Keywords</label>
+                                                    <textarea name="keywords" placeholder="What are some keywords you associate with <%= reading.name %>?"></textarea>
+                                                    <label>Mood</label>
+                                                        <textarea name="mood" placeholder="Describe your mood when you pulled <%= reading.name %>"></textarea>
+                                                    <label>Events</label>
+                                                        <textarea name="events" placeholder="What events were happening in your life when you pulled <%= reading.name %> on <%= reading.createdAt %>?"></textarea>
+                                                    <label>Interpretation for <%= reading.name %></label>
+                                                        <textarea name="int" placeholder="What is your personal interpretation for <%= reading.name %>?"></textarea>  
+                                                    <button type="submit">Add to Diary</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
 <%- include('../partials/footer') %>
