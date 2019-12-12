@@ -32,29 +32,29 @@ ________________
 
 **User Login**
 
-![User Login](./public/images/ui/1.png)
+![User Login](./public/images/UI/1.png)
 
 **Pull A Card**
 
-![Pull a Card](./public/images/ui/2.png)
+![Pull a Card](./public/images/UI/2.png)
 
-![Card returns](./public/images/ui/3.png)
+![Card returns](./public/images/UI/3.png)
 
 **View All Cards**
 
-![Card Index](./public/images/ui/4.png)
+![Card Index](./public/images/UI/4.png)
 
 **Edit Individual Card Meanings**
 
-![Card Index](./public/images/ui/5.png)
+![Card Index](./public/images/UI/5.png)
 
 **View Card Meanings and Add Diary Entries**
 
-![Card Index](./public/images/ui/6.png)
+![Card Index](./public/images/UI/6.png)
 
 **Option to Delete Diary Entry**
 
-![Card Index](./public/images/ui/7.png)
+![Card Index](./public/images/UI/7.png)
 
 [top](#home)
 
